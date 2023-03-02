@@ -16,7 +16,7 @@ for idx, feed in enumerate(RSS_FEED['entries']):
         feed_date = feed['published_parsed']
         link = feed['link']
         title = feed['title']
-        markdown_text += f"- <li>::marker<a href=\"{link}\" target='_blank'>{time.strftime('%Y/%m/%d', feed_date)} - {title}</a></li>"
+        markdown_text += f"<li><a href=\"{link}\" target='_blank' rel='nofollow'>{time.strftime('%Y/%m/%d', feed_date)} - {title}</a></li>"
         
 markdown_text +="</ul>"
 f = open("README.md", mode="w", encoding="utf-8")
