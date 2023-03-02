@@ -9,7 +9,7 @@ markdown_text = """
 
 """ # list of blog posts will be appended here
 
-for idx, feed in enumerate(RSS_FEED['items']):
+for idx, feed in enumerate(RSS_FEED['entries']):
     if idx > MAX_POST:
         break
     else:
