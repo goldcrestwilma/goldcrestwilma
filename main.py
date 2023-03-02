@@ -6,7 +6,7 @@ MAX_POST = 10
 
 markdown_text = """
 ## 📚 Latest Blog Post
-
+<ul>
 """  # list of blog posts will be appended here
 
 for idx, feed in enumerate(RSS_FEED['entries']):
@@ -16,8 +16,9 @@ for idx, feed in enumerate(RSS_FEED['entries']):
         feed_date = feed['published_parsed']
         link = feed['link']
         title = feed['title']
-        markdown_text += f"· <a href=\"{link}\" target=\"_blank\">{time.strftime('%Y/%m/%d', feed_date)} - {title}</a> <br/>\n"
+        markdown_text += f"- <li>::marker<a href=\"{link}\" target='_blank'>{time.strftime('%Y/%m/%d', feed_date)} - {title}</a></li>"
         
+markdown_text +="</ul>"
 f = open("README.md", mode="w", encoding="utf-8")
 f.write(markdown_text)
 f.close()
