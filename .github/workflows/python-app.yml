@@ -8,9 +8,8 @@ on:
     branches: [ "main" ]
   pull_request:
     branches: [ "main" ]
-
-permissions:
-  contents: read
+  schedule:
+      - cron: "0 0 */1 * *"
 
 jobs:
   build:
