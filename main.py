@@ -1,6 +1,6 @@
 import feedparser, time
 
-URL="[rss 피드 URL]"
+URL="https://v2.velog.io/rss/minkyu__k"
 RSS_FEED = feedparser.parse(URL)
 MAX_POST=7
 
