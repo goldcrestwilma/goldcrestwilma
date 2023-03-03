@@ -6,7 +6,7 @@ MAX_POST = 10
 
 markdown_text = """
 ## 📚 Latest Posts
-> 👉 `cmd`(Windows `ctrl`) + `click`
+> 👉 `cmd ⌘`(Windows `ctrl`) + `click`
 <ul>
 """  # list of blog posts will be appended here
 
