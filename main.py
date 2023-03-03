@@ -19,6 +19,6 @@ for idx, feed in enumerate(RSS_FEED['entries']):
         markdown_text += f"<li><a target='_blank' href=\"{link}\">{time.strftime('%Y/%m/%d', feed_date)} - {title}</a></li>"
         
 markdown_text +="</ul>"
-f = open("README.md", mode="r", encoding="utf-8")
+f = open("README.md", mode="w", encoding="utf-8")
 f.write(markdown_text)
 f.close()
