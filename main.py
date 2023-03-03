@@ -5,7 +5,7 @@ RSS_FEED = feedparser.parse(URL)
 MAX_POST = 10
 
 markdown_text = """
-## 📚 Latest Blog Post
+## 📚 Latest Posts 👉 cmd(windows: ctrl) + 클릭
 <ul>
 """  # list of blog posts will be appended here
 
