@@ -12,11 +12,10 @@ markdown_text = """
 for idx, feed in enumerate(RSS_FEED['entries']):
     if idx > MAX_POST:
         break
-    else:
-        feed_date = feed['published_parsed']
-        link = feed['link']
-        title = feed['title']
-        markdown_text += f"<li><a target='_blank' href=\"{link}\">{time.strftime('%Y/%m/%d', feed_date)} - {title}</a></li>"
+    feed_date = feed['published_parsed']
+    link = feed['link']
+    title = feed['title']
+    markdown_text += f"<li><a target='_blank' href=\"{link}\">{time.strftime('%Y/%m/%d', feed_date)} - {title}</a></li>"
         
 markdown_text +="</ul>"
 f = open("README.md", mode="w", encoding="utf-8")
