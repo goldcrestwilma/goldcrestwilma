@@ -6,7 +6,7 @@ MAX_POST = 10
 
 markdown_text = """
 ## 📚 Latest Posts
-> 👉 `cmd`(windows `ctrl`) + `click`
+> 👉 `cmd`(Windows `ctrl`) + `click`
 <ul>
 """  # list of blog posts will be appended here
 
@@ -16,7 +16,7 @@ for idx, feed in enumerate(RSS_FEED['entries']):
     feed_date = feed['published_parsed']
     link = feed['link']
     title = feed['title']
-    markdown_text += f"<li><a target='_blank' href=\"{link}\">{time.strftime('%Y/%m/%d', feed_date)} - {title}</a></li>"
+    markdown_text += f"<li>{time.strftime('%Y. %m. %d.', feed_date)} <a target='_blank' href=\"{link}\">{title}</a></li>"
         
 markdown_text +="</ul>"
 f = open("README.md", mode="w", encoding="utf-8")
