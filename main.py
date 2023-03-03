@@ -6,7 +6,6 @@ MAX_POST = 10
 
 markdown_text = """
 ## 📚 Latest Blog Post
-<base target="_blank">
 <ul>
 """  # list of blog posts will be appended here
 
@@ -17,9 +16,9 @@ for idx, feed in enumerate(RSS_FEED['entries']):
         feed_date = feed['published_parsed']
         link = feed['link']
         title = feed['title']
-        markdown_text += f"<li><a href=\"{link}\">{time.strftime('%Y/%m/%d', feed_date)} - {title}</a></li>"
+        markdown_text += f"<li><a target='_blank' href=\"{link}\">{time.strftime('%Y/%m/%d', feed_date)} - {title}</a></li>"
         
 markdown_text +="</ul>"
-f = open("README.md", mode="a", encoding="utf-8")
+f = open("README.md", mode="r", encoding="utf-8")
 f.write(markdown_text)
 f.close()
