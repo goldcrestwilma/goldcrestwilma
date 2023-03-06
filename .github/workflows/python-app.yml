@@ -33,8 +33,7 @@ jobs:
       run: | 
         git pull
         git add .
-        git diff
         git config --local user.email "aga601@naver.com"
         git config --local user.name "goldcrestwilma"
-        git commit -m "Update README.me"
+        git git diff --exit-code || commit -m "Update README.me"
         git push
