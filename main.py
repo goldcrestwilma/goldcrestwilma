@@ -5,6 +5,8 @@ RSS_FEED = feedparser.parse(URL)
 MAX_POST = 10
 
 markdown_text = """
+<img src=\"https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fgithub.com%2Fgoldcrestwilma%2Fhit-counter&count_bg=%2379C83D&title_bg=%23555555&icon=github.svg&icon_color=%23E7E7E7&title=hits&edge_flat=false\"/>
+
 ## 📚 Latest Posts
 > 👉 `cmd ⌘`(Windows `ctrl`) + `click`
 <ul>
@@ -18,10 +20,7 @@ for idx, feed in enumerate(RSS_FEED['entries']):
     title = feed['title']
     markdown_text += f"<li>{time.strftime('%Y. %m. %d.', feed_date)} <a target='_blank' href=\"{link}\">{title}</a></li>"
         
-markdown_text += """
-</ul>
-<img src=\"https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fgithub.com%2Fgoldcrestwilma%2Fhit-counter&count_bg=%2379C83D&title_bg=%23555555&icon=github.svg&icon_color=%23E7E7E7&title=hits&edge_flat=false\"/>
-"""
+markdown_text += "</ul>"
 
 f = open("README.md", mode="w", encoding="utf-8")
 f.write(markdown_text)
