@@ -35,5 +35,6 @@ jobs:
         git add .
         git config --local user.email "aga601@naver.com"
         git config --local user.name "goldcrestwilma"
-        git diff --exit-code || commit -m "Update README.me"
+        git diff --exit-code 
+        git commit -m "Update README.md"
         git push
