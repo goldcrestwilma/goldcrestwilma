@@ -38,7 +38,7 @@ jobs:
         git diff --quiet . || echo "changed=true" >> $GITHUB_OUTPUT
         
     - name: Update README.md file
-      if: steps.verify_diff.ouputs.changed == 'true'
+      if: steps.verify_diff.outputs.changed == 'true'
       run: | 
         git pull
         git add .
